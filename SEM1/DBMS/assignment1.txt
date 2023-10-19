@@ -1,0 +1,120 @@
+-- q1
+-- SELECT EMPNO,ENAME,JOB,HIREDATE FROM EMP;
+
+-- Q2
+-- SELECT DISTINCT(JOB) FROM EMP;
+
+--Q3
+-- SELECT CONCAT(ENAME," , ",JOB) FROM EMP;
+
+--Q4
+-- SELECT ENAME ,SAL FROM EMP WHERE SAL>2850;
+
+-- Q5
+--  SELECT ENAME,DEPTNO FROM EMP WHERE EMPNO=7900;
+
+-- Q6
+-- SELECT ENAME,SAL FROM EMP WHERE SAL NOT BETWEEN 1500 AND 2850;
+
+-- Q7
+-- SELECT ENAME,DEPTNO FROM EMP WHERE DEPTNO IN (10,30) ORDER BY ENAME ASC;
+
+-- Q8
+-- SELECT ENAME,SAL FROM EMP WHERE SAL > 1500 AND DEPTNO=10 OR DEPTNO=30;
+
+--Q9
+-- SELECT ENAME,HIREDATE FROM EMP WHERE YEAR(HIREDATE)=1981;
+
+-- Q10
+--  SELECT ENAME,JOB FROM EMP WHERE MGR IS NULL;
+
+-- Q11
+--  SELECT ENAME,SAL,COMM FROM EMP WHERE COMM IS NOT NULL ORDER BY SAL DESC;
+
+-- Q12
+-- SELECT ENAME FROM EMP WHERE ENAME LIKE '__A%';
+
+-- Q13
+-- SELECT ENAME FROM EMP WHERE (ENAME LIKE '%R%R%' OR ENAME LIKE '%A%A%') AND (DEPTNO=30 OR MGR=7788);
+
+-- Q14
+--  SELECT ENAME,JOB,SAL FROM EMP WHERE JOB IN ('CLERK','ANALYST') AND SAL NOT IN (1000,3000,5000);
+
+-- Q15
+--  SELECT ENAME , SAL , COMM FROM EMP WHERE COMM > SAL*1.05;
+
+-- Q16
+-- SELECT CURDATE();
+
+-- Q17
+--  SELECT EMPNO,ENAME,SAL ,ROUND(SAL*1.15) AS INC_SAL FROM EMP;
+
+-- Q19
+--  SELECT CONCAT(ENAME,' EARNS ',SAL,' MONTHLY BUT WANTS ',SAL * 3) AS 'DREAM SALARY' FROM EMP;
+
+-- Q20
+--  SELECT CONCAT(SUBSTR(ENAME,1,1),LCASE(SUBSTR(ENAME,2,LENGTH(ENAME)-1))) AS NAME,LENGTH(ENAME) AS LENGTH FROM EMP WHERE SUBSTR(ENAME,1,1) IN ('J','A','M');
+
+-- Q21
+--  SELECT EMP.ENAME ,DEPT.DNAME,EMP.DEPTNO FROM EMP JOIN DEPT ON EMP.DEPTNO=DEPT.DEPTNO;
+
+-- Q22
+-- SELECT DISTINCT(JOB) FROM EMP WHERE DEPTNO=30;
+
+-- Q23
+--  SELECT EMP.ENAME,DEPT.DNAME,DEPT.LOC FROM EMP JOIN DEPT ON EMP.DEPTNO = DEPT.DEPTNO;
+
+-- Q24
+--  SELECT EMP.ENAME ,DEPT.DNAME FROM EMP JOIN DEPT ON EMP.DEPTNO=DEPT.DEPTNO WHERE EMP.ENAME LIKE '%A%';
+
+-- Q25
+--  SELECT EMP.ENAME ,EMP.JOB,EMP.DEPTNO,DEPT.DNAME FROM EMP JOIN DEPT ON EMP.DEPTNO=DEPT.DEPTNO AND DEPT.LOC = 'DALLAS';
+
+-- Q26
+--  Select e1.ename as Employee,e1.empno as EmployeeID ,e2.ename as Manager,e2.empno as ManagerID from emp as e1,emp as e2 where e1.mgr=e2.empno;
+
+-- Q27
+--  select e1.ename as Employee,e1.empno as EmployeeID ,e2.ename as Manager,e2.empno as ManagerID from emp as e1 left join emp as e2 on e1.mgr=e2.empno;
+
+-- Q29
+-- select emp.ename, emp.job ,dept.dname ,emp.sal,salgrade.grade from emp,dept,salgrade where emp.deptno=dept.deptno and (emp.sal>=salgrade.losal and emp.sal<=salgrade.hisal ) ;
+
+--Q30
+-- Select e1.ename as Employee,e1.hiredate as eHiredate ,e2.ename as Manager,e2.hiredate as mHireDate from emp as e1,emp as e2 where e1.mgr=e2.empno and e1.hiredate < e2.hiredate;
+
+--Q31
+select min(sal) as MIN, max(sal) as MAX, sum(sal) as SUM, avg(sal) as AVG from emp;
+
+--Q32 
+select job , min(sal) as MIN, max(sal) as MAX, sum(sal) as SUM, avg(sal) as AVG from emp group by job;
+
+--Q33
+select job ,count(*) from emp group by job;
+
+--Q34
+select max(sal)-min(sal) as difference from emp;
+
+--Q36
+select dept.dname ,dept.loc , count(*) as numberOfEmployees, avg(emp.sal) from emp join dept on emp.deptno = dept.deptno group by emp.deptno;
+
+--Q37
+select emp.ename ,emp.hiredate from emp join dept on emp.deptno = dept.deptno where dept.deptno = (select deptno from emp where ename ="Blake");
+
+--Q38 
+select empno,ename  from emp where sal > (select avg(sal) from emp);
+
+
+--Q39 
+
+
+--Q40
+Select e1.ename as Employee, e1.sal as salary,e2.ename as Manager,e2.empno as ManagerID from emp as e1,emp as e2 where e1.mgr=e2.empno and e2.ename = "KING";
+
+
+--Q41
+select emp.ename, dept.deptno ,dept.dname ,emp.job from emp,dept where emp.deptno=dept.deptno and dept.dname = "SALES";
+
+--Q42 
+select emp.empno ,emp.ename, emp.sal,dept.deptno ,dept.dname ,emp.job from emp,dept where emp.deptno=dept.deptno and emp.sal > (select avg(sal) from emp) and emp.deptno in (select deptno from emp where ename like '%T%');
+
+

@@ -1,0 +1,59 @@
+Query1. Write a query to display name, job, hiredate and employee number for each employee with employee number appearing first.
+Query2. Write a query to display unique jobs from the employee table.
+Query3. Write a query to display name concatenated by a job separated by a comma.
+Query4. Write a query to display the name and salary of employees earning more than $2850. 
+Quer5. Write a query to display the name and department number for employee number 7900.
+Query6. Write a query to display the name and salary of all employees whose salary is not in the range of $1500 and $2850.
+Query7. Write a query to display the name and department number of all employees in departments 10 and 30 in alphabetical order by name.
+Query8. Write a query to display the name and salary of employees who earned more than $1500 and are in department number 10 or 30.
+Query9. Write a query to display the name and hire date of every employee who was hired in 1981.
+Query10. Write a query to display the name and job of all employees who do not have a manager.
+Query11. Write a query to display the name, salary and commission for all employees who earn commission. Sort the data in descending order of salary.
+Query12. Write a query to display the names of all employees where the third letter of their name is A.
+Query13. Write a query to display the names of all employees that have two R's or A's in their name and are in department number 30 or their manager is 7788.
+Query14. Write a query to display the name, job and salary of all employees whose job is clerk or analyst and their salary are not equal to 1000, 3000 or 5000.
+Query15. Write a query to display the name, salary and commission of all employees whose commission amount is greater than their salary increased by 5%.
+Query16. Write a query to display a current date.
+Query17. Write a query to display employee number, name, salary, salary increased by 15% expressed as a whole number.
+Query18. Write a query to display the employee number, name, salary, salary increased by 15% expressed as a whole number and increase in salary.
+Query19.Write a query to display the following for each employee:-
+<ename> earns <salary> monthly but wants <3 times salary>. Label the column as Dream Salary.
+Query20.Write a query to display the employees name with the first letter capitalized and all other letters lower case and length of their name for all employees whose name start with J, A and M.
+Query21. Write a query to display the name, department name, department number for all employees.
+Query22. Write a query that displays the unique listing of all jobs that are in department 30.
+Query23. Write a query to display the employee name, department name and location for all employees who earn a commission.
+Query24. Write a query to display the employee name and department name for all employees who have 'A' in their name.
+Query25. Write a query to display the name, job, department number and department name for all employees who work at location DALLAS.
+Query26. Write a query to display employee name and employee number along with their
+manager&#39;s name and manager&#39;s number.
+Query27. Write a query to display employee name and employee number along with their
+manager&#39;s name and manager&#39;s number along with the employees who do not have a manager.
+Query28. Write a query to display employee name, department number and all the employees
+that work in the same department as the given employee. Do this for all the employees.
+Query29. Write a query to display the name, job, department name, salary and grade for all
+employees.
+Query30. Write a query to display all names and hire dates of all employees along with their
+manager&#39;s name and hire date for all employees who were hired before their managers.
+Query31. Write a query to display the highest, lowest, sum and average salary of all employees.
+Query32. Write a query to display minimum, maximum, sum and average salary for each job
+type.
+Query33. Write a query to display the number of people with the same job.
+Query34. Write a query to display the difference between the highest and lowest salaries.
+Query35. Write a query to display the manager number and the salary of the lowest paid
+employee for that manager. Exclude any groups where the manager id is not known. Exclude
+any groups where the minimum salary is less than $1000.
+Query36. Write a query to display the department name, location name, number of employees
+and the average salary for all employees in that department.
+Query37. Write a query to display the employee name and hire date for all employees in the
+same department as Blake.
+Query38. Write a query to display the employee number and employee name for all employees
+who earn more than the average salary.
+Query39. Write a query to display the employee number and name for all employees who work
+in a department with any employee whose name contains a T.
+Query40. Write a query to display the employee name and salary of all employees who report
+to King.
+Query41. Write a query to display the department number, name and job for all employees in
+the Sales department.
+Query42.Write a query to display the employee number, name and salary for all employees
+who earn more than the average salary and who work in a department with any employee with
+a T in their name.
