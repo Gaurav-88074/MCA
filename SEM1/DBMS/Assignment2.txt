@@ -5,7 +5,7 @@
 --  select e1.ename as Employee,e1.empno as EmployeeID ,e2.ename as Manager,e2.empno as ManagerID from emp as e1 left join emp as e2 on e1.mgr=e2.empno;
 
 -- Q28
---  select ename,deptno from emp order by deptno;
+--  select e1.ename, e1.deptno from emp as e1 ,emp as e2 where e1.deptno = e2.deptno and e1.empno!=e2.empno;
 
 -- Q29
 -- select emp.ename, emp.job ,dept.dname ,emp.sal,salgrade.grade from emp,dept,salgrade where emp.deptno=dept.deptno and (emp.sal>=salgrade.losal and emp.sal<=salgrade.hisal ) ;
