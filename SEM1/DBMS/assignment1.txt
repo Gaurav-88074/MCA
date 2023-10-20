@@ -89,7 +89,7 @@ select min(sal) as MIN, max(sal) as MAX, sum(sal) as SUM, avg(sal) as AVG from e
 select job , min(sal) as MIN, max(sal) as MAX, sum(sal) as SUM, avg(sal) as AVG from emp group by job;
 
 --Q33
-select job ,count(*) from emp group by job;
+select job ,count(*) as numberOfPeople from emp group by job;
 
 --Q34
 select max(sal)-min(sal) as difference from emp;
@@ -105,7 +105,7 @@ select empno,ename  from emp where sal > (select avg(sal) from emp);
 
 
 --Q39 
-
+select emp.empno ,emp.ename, emp.sal,dept.deptno ,dept.dname ,emp.job from emp,dept where emp.deptno=dept.deptno and emp.deptno in (select deptno from emp where ename like '%T%');
 
 --Q40
 Select e1.ename as Employee, e1.sal as salary,e2.ename as Manager,e2.empno as ManagerID from emp as e1,emp as e2 where e1.mgr=e2.empno and e2.ename = "KING";
