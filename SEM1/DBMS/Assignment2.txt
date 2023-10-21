@@ -26,7 +26,7 @@ select job ,count(*) as numberOfPeople from emp group by job;
 select max(sal)-min(sal) as difference from emp;
 
 --Q36
-select dept.dname ,dept.loc , count(*) as numberOfEmployees, avg(emp.sal) from emp join dept on emp.deptno = dept.deptno group by emp.deptno;
+select distinct(dept.dname),dept.loc ,(select count(emp.empno) from emp where emp.deptno=dept.deptno) as noOfEmployees ,(select COALESCE(avg(sal),0) from emp where emp.deptno=dept.deptno) as avg from dept;
 
 --Q37
 select emp.ename ,emp.hiredate from emp join dept on emp.deptno = dept.deptno where dept.deptno = (select deptno from emp where ename ="Blake");
@@ -39,11 +39,11 @@ select empno,ename  from emp where sal > (select avg(sal) from emp);
 select emp.empno ,emp.ename from emp,dept where emp.deptno=dept.deptno and emp.deptno in (select deptno from emp where ename like '%T%');
 
 --Q40
-Select e1.ename as Employee, e1.sal as salary,e2.ename as Manager,e2.empno as ManagerID from emp as e1,emp as e2 where e1.mgr=e2.empno and e2.ename = "KING";
+ Select e1.ename as Employee, e1.sal as salary from emp as e1,emp as e2 where e1.mgr=e2.empno and e2.ename = "KING";
 
 
 --Q41
 select emp.ename, dept.deptno ,dept.dname ,emp.job from emp,dept where emp.deptno=dept.deptno and dept.dname = "SALES";
 
 --Q42 
-select emp.empno ,emp.ename, emp.sal,dept.deptno ,dept.dname ,emp.job from emp,dept where emp.deptno=dept.deptno and emp.sal > (select avg(sal) from emp) and emp.deptno in (select deptno from emp where ename like '%T%');
+select emp.empno ,emp.ename, emp.sal from emp,dept where emp.deptno=dept.deptno and emp.sal > (select avg(sal) from emp) and emp.deptno in (select deptno from emp where ename like '%T%');

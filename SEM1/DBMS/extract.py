@@ -10,3 +10,5 @@ for i in d:
     # print(line)
 file2  = open("output.txt",'w')
 file2.write("".join(res))
+
+#  select distinct(dept.deptno),(select count(emp.empno) from emp where emp.deptno=dept.deptno) as noOfEmployees ,(select avg(sal) from emp where emp.deptno=dept.deptno) as avg from dept;
