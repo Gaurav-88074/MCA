@@ -1,5 +1,5 @@
 -- Q26
---  Select e1.ename as Employee,e1.empno as EmployeeID ,e2.ename as Manager,e2.empno as ManagerID from emp as e1,emp as e2 where e1.mgr=e2.empno;
+--  select e1.ename as Employee,e1.empno as EmployeeID ,e2.ename as Manager,e2.empno as ManagerID from emp as e1,emp as e2 where e1.mgr=e2.empno;
 
 -- Q27
 --  select e1.ename as Employee,e1.empno as EmployeeID ,e2.ename as Manager,e2.empno as ManagerID from emp as e1 left join emp as e2 on e1.mgr=e2.empno;
@@ -24,6 +24,9 @@ select job ,count(*) as numberOfPeople from emp group by job;
 
 --Q34
 select max(sal)-min(sal) as difference from emp;
+
+--Q35 
+select mgr,count(*),min(sal) from emp where mgr is not null group by mgr having min(sal)>=1000;
 
 --Q36
 select distinct(dept.dname),dept.loc ,(select count(emp.empno) from emp where emp.deptno=dept.deptno) as noOfEmployees ,(select COALESCE(avg(sal),0) from emp where emp.deptno=dept.deptno) as avg from dept;

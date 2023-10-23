@@ -1,11 +1,19 @@
-file1  = open("assignment1.txt",'r')
+file1  = open("assignment2.txt",'r')
 res = []
 d = file1.readlines()
 for i in d:
     line = i.strip()
     a="SELECT"
-    if a in line:
+    b = "select"
+    c = "Select"
+    if a in line :
         index = line.index(a)
+        res+=line[index:]+"\n"
+    elif b in line:
+        index = line.index(b)
+        res+=line[index:]+"\n"
+    elif c in line:
+        index = line.index(c)
         res+=line[index:]+"\n"
     # print(line)
 file2  = open("output.txt",'w')

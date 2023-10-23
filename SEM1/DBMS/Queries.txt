@@ -24,10 +24,9 @@ Query22. Write a query that displays the unique listing of all jobs that are in 
 Query23. Write a query to display the employee name, department name and location for all employees who earn a commission.
 Query24. Write a query to display the employee name and department name for all employees who have 'A' in their name.
 Query25. Write a query to display the name, job, department number and department name for all employees who work at location DALLAS.
-Query26. Write a query to display employee name and employee number along with their
-manager&#39;s name and manager&#39;s number.
+Query26. Write a query to display employee name and employee number along with their manager's name and manager's number.
 Query27. Write a query to display employee name and employee number along with their
-manager&#39;s name and manager&#39;s number along with the employees who do not have a manager.
+manager's name and manager's number along with the employees who do not have a manager.
 Query28. Write a query to display employee name, department number and all the employees
 that work in the same department as the given employee. Do this for all the employees.
 Query29. Write a query to display the name, job, department name, salary and grade for all
