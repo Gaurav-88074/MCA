@@ -5,8 +5,7 @@ of supplier numbers.
 d. Get suppliers names for suppliers who do not supply part P2.
 e. For each shipment get full shipment details, including total shipment weights.
 f. Get all the shipments where the quantity is in the range 300 to 750 inclusive.
-g. Get part nos. for parts that either weigh more than 16 pounds or are supplied by suppliers $2, or
-both.
+g. Get part nos. for parts that either weigh more than 16 pounds or are supplied by suppliers S2, or both.
 h. Get the names of cities that store more than five red parts.
 i. Get full details of parts supplied by a supplier in London.
 j. Get part numbers for part supplied by a supplier in London to a project in London.
