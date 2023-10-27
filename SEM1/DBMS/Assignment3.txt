@@ -1,0 +1,38 @@
+a.
+PRIMARY KEYS : suppliers(Sno),Parts(pno),Project(Jno)
+Foreign KEYS : Shipment(Sno,Pno,Jno)
+
+b.
+SELECT sno FROM suppliers WHERE scity="paris" AND status > 20;
+
+c.
+SELECT S.sno,S.sname,S.status,S.scity FROM suppliers as S,shipment as SH WHERE S.sno = SH.sno AND SH.PNO = "P2" ORDER BY S.sno ASC;
+
+d.
+SELECT suppliers.* FROM suppliers JOIN shipment ON suppliers.sno = shipment.sno AND shipment.pno!="P2";
+
+e.
+SELECT suppliers.*, parts.*, project.*, shipment.qty * parts.weight AS total_weight FROM suppliers, parts, project, shipment WHERE shipment.sno = suppliers.sno AND shipment.pno = parts.pno AND shipment.jno = project.jno;
+
+
+f.
+SELECT * FROM shipment WHERE qty BETWEEN 300 AND 750;
+
+g.
+SELECT pno FROM parts WHERE weight > 16 OR pno IN (SELECT pno FROM shipment WHERE sno = 'S2');
+
+h.
+SELECT city FROM parts WHERE colour = 'red' GROUP BY city HAVING COUNT(*) > 5;
+
+i.
+SELECT p.* FROM parts AS p, suppliers AS s, shipment AS sh WHERE sh.sno = s.sno AND sh.pno = p.pno AND s.scity = 'London';
+
+j.
+SELECT p.pno FROM parts AS p, suppliers AS s, shipment AS sh WHERE sh.sno = s.sno AND sh.pno = p.pno AND s.scity = 'London' AND p.city = 'London';
+
+k.
+SELECT sno, COUNT(jno) FROM shipment GROUP BY sno;
+
+l.
+SELECT shipment.sno, shipment.pno, shipment.qty * parts.weight AS total_quantity FROM shipment JOIN parts ON parts.pno = shipment.pno;
+

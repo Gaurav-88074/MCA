@@ -1,0 +1,62 @@
+//Creating tables
+CREATE TABLE suppliers(
+    sno varchar(4) NOT NULL PRIMARY KEY,
+    sname varchar(20),
+    status decimal(5,2),
+    scity varchar(10));
+
+CREATE TABLE parts(
+    pno VARCHAR(4) NOT NULL PRIMARY KEY,
+    pname VARCHAR(20) ,
+    colour VARCHAR(10),
+    weight DECIMAL(7,2),
+    city VARCHAR(15));
+
+ CREATE TABLE shipment(
+    sno VARCHAR(4) NOT NULL PRIMARY KEY,
+    pno VARCHAR(4),
+    jno VARCHAR(4),
+    qty VARCHAR(8));
+
+CREATE TABLE project(
+    jno VARCHAR(4) NOT NULL PRIMARY KEY,
+    jname VARCHAR(20),
+    jcity VARCHAR(15));
+
+//Inserting data into tables
+
+insert into suppliers values("s1","Ajay",30.00,"Paris"),
+     ("s2","Nancy",20.00,"London"),
+     ("s3","Ram",40.00,"New York"),
+     ("s4","Isha",70.00,"Paris"),
+     ("s5","Ayush",30.00,"Delhi"),
+     ("s6","Hema",10.00,"Chennai"),
+     ("s7","Seema",45.00,"London"),
+     ("s8","Riya",23.00,"Ontario");
+
+insert into parts values("p1","A","red",7.00,"Paris"),
+    ("p2","B","blue",20.00,"London"),
+    ("p3","c","green",17.00,"Newyork"),
+    ("p4","D","black",21.00,"Paris"),
+    ("p5","E","red",9.00,"Ontario"),
+    ("p6","F","grey",10.00,"Delhi"),
+    ("p7","G","silver",18.00,"Chennai"),
+    ("p8","H","red",7.00,"Delhi");
+
+ insert into project values("j1","j","Chennai"),
+     ("j2","K","London"),
+     ("j3","L","Paris"),
+     ("j4","M","Ontario"),
+     ("j5","N","Delhi"),
+     ("j6","O","Chennai"),
+     ("j7","P","London"),
+     ("j8","Q","New York");
+
+ INSERT INTO shipment VALUES ("S1","P1","J1",400),
+    ("S2","P2","J2",500),
+    ("S3","P3","J3",350),
+    ("S4","P4","J4",100),
+    ("S5","P5","J5",200),
+    ("S6","P6","J6",600),
+    ("S7","P7","J7",700),
+    ("S8","P8","J8",250);
