@@ -11,7 +11,16 @@ database = pymysql.connect(
     database=database, 
     port=port
 )
-
+def init(cursor, database) -> None:
+    query = """
+    CREATE TABLE IF NOT EXISTS User (
+        id VARCHAR(100) PRIMARY KEY,
+        username VARCHAR(100),
+        age INT(11)
+    )
+    """
+    cursor.execute(query)
+    database.commit()
 def menu()->None:
     print("==============================")
     print("Enter 1 to perfom SELECT query")
@@ -93,6 +102,5 @@ def getUserChoice(cursor,database)->int:
 
                 break
 cursor = database.cursor()
+init(cursor,database)
 getUserChoice(cursor,database)
-# cursor.execute("select * from ram")
-# print(*cursor.fetchall())
