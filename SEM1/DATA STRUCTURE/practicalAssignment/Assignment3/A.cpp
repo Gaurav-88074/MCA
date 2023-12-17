@@ -12,13 +12,13 @@ void displaySpace(int x){
     }
 }
 void displayPattern(int n){
-    for (int i = 0; i <=n; i++){
-        displaySpace(n-i);
-        displayLine(2*i + 1);
+    for (int i = 0; i <n; i++){
+        displaySpace((n-i));
+        displayLine(max(1,i*3));
     }
     
 }
 int main(){
-    displayPattern(5);
+    displayPattern(4);
     return 0;
 }
