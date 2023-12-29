@@ -1,0 +1,33 @@
+1. Write a Program to design a class having sta5c member func5on named showcount()
+which has the property of displaying the number of objects created of the class.
+2. Write a Program using class to process Shopping List for a Departmental Store. The
+list include details such as the Code No and Price of each item and perform the
+opera5ons like Adding, Dele5ng Items to the list and Prin5ng the Total value of Order.
+3. Write a Program which creates & uses array of object of a class. for eg. implemen5ng
+the list of Managers of a Company having details such as Name, Age, etc...).
+4. Write a Program to find Maximum out of Two Numbers using friend func5on.
+Note: Here one number is a member of one class and the other number is member
+of some other class.
+5. Write a Program to swap private data members of classes named as class_1, class_2
+using friend func5on.
+6. Write a Program to design a class complex to represent complex numbers. The
+complex class should use an external func5on (use it as a friend func5on) to add two
+complex numbers. The func5on should return an object of type complex
+represen5ng the sum of two complex numbers.
+7. Write a Program using copy constructor to copy data of an object to another object.
+8. Write a Program to allocate memory dynamically for an object of a given class using
+class's constructor.
+9. Write a Program to design a class to represent a matrix. The class should have the
+func5onality to insert and retrieve the elements of the matrix.
+10. Write a program to design a class represen5ng complex numbers and having the
+func5onality of performing addi5on & mul5plica5on of two complex numbers using
+operator.
+11. Write a Program to overload operators like *, <<, >> using friend func5on. The
+following overloaded operators should work for a class vector.
+12. Write a program for developing a matrix class which can handle integer matrices of
+different dimensions. Also overload the operator for addi5on, mul5plica5on &
+comparison of matrices.
+13. Write a program in C to count the number of Lines, words and characters in a file.
+14. Write a C++ program to search for a specific string in a text file and display its line
+number(s).
+15. Write a C++ program to read a CSV file and display its contents in tabular form.
