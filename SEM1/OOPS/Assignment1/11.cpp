@@ -33,11 +33,9 @@ void display(vector<int> &obj){
 }
 int main(){
     vector<int> vect1 = {10,20};
-
     vector<int> res1 =  vect1 * 7;
     vector<int> res2 =  vect1<<1;
     vector<int> res3 =  vect1>>1;
-
     display(res1);
     display(res2);
     display(res3);
