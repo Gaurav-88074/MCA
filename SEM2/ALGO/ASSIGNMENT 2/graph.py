@@ -7,11 +7,7 @@ from mergesort import MergeSort
 from quicksort import QuickSort
 from heapsort import HeapSort
 
-def compute(x):
-    return x * math.log(x, 2)
-
 x_values = []
-y_nlogn = []
 y_selectionSort = []
 y_bubbleSort = []
 y_insertionSort = []
@@ -21,33 +17,25 @@ y_heapSort = []
 
 for size in range(1, 10007, 500):
     x_values.append(size)
-    y_nlogn.append(compute(size))
     
     obj = SelectionSort(size)
-    obj.sort()
-    y_selectionSort.append(obj.getComparisonCount())
+    y_selectionSort.append(obj.measure_execution_time())
     
     obj = BubbleSort(size)
-    obj.sort()
-    y_bubbleSort.append(obj.getComparisonCount())
+    y_bubbleSort.append(obj.measure_execution_time())
     
     obj = InsertionSort(size)
-    obj.sort()
-    y_insertionSort.append(obj.getComparisonCount())
+    y_insertionSort.append(obj.measure_execution_time())
     
     obj = MergeSort(size)
-    obj.sort()
-    y_mergeSort.append(obj.getComparisonCount())
+    y_mergeSort.append(obj.measure_execution_time())
     
     obj = QuickSort(size)
-    obj.sort()
-    y_quickSort.append(obj.getComparisonCount())
+    y_quickSort.append(obj.measure_execution_time())
     
     obj = HeapSort(size)
-    obj.sort()
-    y_heapSort.append(obj.getComparisonCount())
+    y_heapSort.append(obj.measure_execution_time())
 
-plt.plot(x_values, y_nlogn, label='nlogn', linestyle='--', marker='o')
 plt.plot(x_values, y_selectionSort, label='SelectionSort', linestyle='-', marker='x')
 plt.plot(x_values, y_bubbleSort, label='BubbleSort', linestyle='-.', marker='^')
 plt.plot(x_values, y_insertionSort, label='InsertionSort', linestyle=':', marker='s')
@@ -56,7 +44,7 @@ plt.plot(x_values, y_quickSort, label='QuickSort', linestyle='--', marker='v')
 plt.plot(x_values, y_heapSort, label='HeapSort', linestyle='-.', marker='d')
 
 plt.xlabel('Size of Array')
-plt.ylabel('No. of Comparisons')
+plt.ylabel('Execution Time')
 plt.title('Sorting Algorithms')
 plt.legend()
 plt.grid(True)  

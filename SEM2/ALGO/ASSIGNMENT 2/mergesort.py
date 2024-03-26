@@ -1,4 +1,5 @@
 import random
+import time
 class MergeSort:
     def __init__(self,size) -> None:
         self.arr = self.generateRandomArrayOfSize(size)
@@ -10,6 +11,11 @@ class MergeSort:
         return res
     def getComparisonCount(self):
         return self.count
+    def measure_execution_time(self):
+        start_time = time.time()
+        self.sort()
+        end_time = time.time()
+        return end_time - start_time
     def merge(self, array1, size1, array2, size2):
         res = [None]*(size1+size2)
         p1 = 0

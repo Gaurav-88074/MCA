@@ -1,4 +1,5 @@
 import random
+import time
 class InsertionSort:
     def __init__(self,size) -> None:
         self.arr = self.generateRandomArrayOfSize(size)
@@ -10,6 +11,11 @@ class InsertionSort:
         return res
     def getComparisonCount(self):
         return self.count
+    def measure_execution_time(self):
+        start_time = time.time()
+        self.sort()
+        end_time = time.time()
+        return end_time - start_time
     def sort(self):
         array=self.arr
         for i in range(1, len(array)):

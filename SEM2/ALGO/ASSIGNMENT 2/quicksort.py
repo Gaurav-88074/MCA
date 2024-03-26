@@ -1,4 +1,5 @@
 import random
+import time
 class QuickSort:
     def __init__(self,size) -> None:
         self.arr = self.generateRandomArrayOfSize(size)
@@ -10,6 +11,11 @@ class QuickSort:
         return res
     def getComparisonCount(self):
         return self.count
+    def measure_execution_time(self):
+        start_time = time.time()
+        self.sort()
+        end_time = time.time()
+        return end_time - start_time
     def partition(self, array, start, end):
         index = start - 1
         pivot = end
