@@ -241,19 +241,23 @@ for size in range(1, 10007, 500):
     
     obj = HeapSort(size)
     y_heapSort.append(obj.measure_execution_time())
+print("size bubblesort heapsort mergesort quicksort insertionsort selectionsort")
+for i in range(len(x_values)):
+    size = x_values[i]
+    res = f"{size} {y_bubbleSort[i]} {y_selectionSort[i]} {y_mergeSort[i]} {y_quickSort[i]} {y_insertionSort[i]} {y_selectionSort[i]}"
+    print(size,y_bubbleSort[i],y_selectionSort[i],y_mergeSort[i],y_quickSort[i],y_insertionSort[i],y_selectionSort[i])
+# plt.plot(x_values, y_selectionSort, label='SelectionSort', linestyle='-', marker='x')
+# plt.plot(x_values, y_bubbleSort, label='BubbleSort', linestyle='-.', marker='^')
+# plt.plot(x_values, y_insertionSort, label='InsertionSort', linestyle=':', marker='s')
+# plt.plot(x_values, y_mergeSort, label='MergeSort', linestyle='-', marker='*')
+# plt.plot(x_values, y_quickSort, label='QuickSort', linestyle='--', marker='v')
+# plt.plot(x_values, y_heapSort, label='HeapSort', linestyle='-.', marker='d')
 
-plt.plot(x_values, y_selectionSort, label='SelectionSort', linestyle='-', marker='x')
-plt.plot(x_values, y_bubbleSort, label='BubbleSort', linestyle='-.', marker='^')
-plt.plot(x_values, y_insertionSort, label='InsertionSort', linestyle=':', marker='s')
-plt.plot(x_values, y_mergeSort, label='MergeSort', linestyle='-', marker='*')
-plt.plot(x_values, y_quickSort, label='QuickSort', linestyle='--', marker='v')
-plt.plot(x_values, y_heapSort, label='HeapSort', linestyle='-.', marker='d')
-
-plt.xlabel('Size of Array')
-plt.ylabel('Execution Time')
-plt.title('Sorting Algorithms')
-plt.legend()
-plt.grid(True)  
-plt.show()
+# plt.xlabel('Size of Array')
+# plt.ylabel('Execution Time')
+# plt.title('Sorting Algorithms')
+# plt.legend()
+# plt.grid(True)  
+# plt.show()
 
 
